@@ -4,11 +4,71 @@ body {
     font-family:  Helvetica, Arial, sans-serif;
 }
 
-a:link {
-    color: plum;
+p {
+    
 }
-
 
 h1 {
     font-size: 3.0em;
+}
+
+
+
+.topnav {
+    text-align: center;
+    align-content: center;
+}
+
+.content {
+    text-align: center;
+    margin: 16px 50px 16px 50px;
+}
+
+.tierpost {
+    text-align: center;
+    vertical-align: middle;
+    margin: 40px 100px 40px 100px;
+    background-color: rgb(50, 50, 50);
+}
+
+.tierpost img {
+    float: left;
+    margin: 0 10px 10px 10px;
+    padding: 2px;
+}
+
+.contact-page {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-item {
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.footer {
+    clear: both;
+    margin: 0;
+    padding: .5em;
+    color: dimgray;
+    text-align: center;
+}
+
+
+#rightnav {
+    float: right;
+    width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+
+a:link {
+    color: darkorchid;
+}
+
+a:visited {
+    color: mediumpurple;
 }
