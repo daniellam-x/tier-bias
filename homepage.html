@@ -14,17 +14,20 @@
 </head> 
 
 <body>
-    
     <div class="topnav">
-        <a href="homepage.html"><img src="images/logo.png" alt ="Tier Bias Logo" width="30" height="30">Home</a>
+        <div class="leftnav">
+            <a href="homepage.html"><img src="images/logo.png" alt ="Tier Bias Logo" width="30" height="30"></a>
+        </div>
 
-        <a href="createtier.html">Create Tier</a>
-
-        <a href="search.html">Search</a>
-
-        <a href="contact.html">Contact Us</a>
-
-        <a href="login.html">Log-In</a>
+        <div class="rightnav">
+            
+            <a href="homepage.html">Home</a>
+            <a href="createtier.html">Create Tier</a>
+            <a href="search.html">Search</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.html">Log-In</a>
+        
+        </div>
     </div>
 
     <div class="content">
@@ -53,3 +56,16 @@
 </body>
     
 </html>
+
+<!-- git feature branch & rebase workflow =
+ 
+    git checkout -b feature_name
+    .. make some commits (git add . && git commit)
+    git fetch
+    git rebase origin/master
+    git checkout master && git pull
+    git merge feature && git push
+    git branch -d feature_name 
+    
+-->
+
