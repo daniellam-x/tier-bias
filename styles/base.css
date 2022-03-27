@@ -11,6 +11,10 @@ html, body {
     font-family:  Helvetica, Arial, sans-serif;
 }
 
+h1 {
+    padding: 10px;
+}
+
 .topnav {
     display: flex;
     flex-direction: row;
