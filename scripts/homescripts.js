@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const rankingOrder = 'SABCDEFGHIJKLMNOPQRTUVWXYZ';
 
 function getDummyPizzaPostData() {
@@ -86,8 +85,11 @@ function loadFeed() {
 
 
 const currentPosts = [];
-const controversialSort = [];
-const newestSort = [];
+
+// NOTE: you cannot have the conflicting variable names and functions names
+// commenting out variables below to keep code working
+// const controversialSort = [];
+// const newestSort = [];
 const newPosts = [];
 
 function controversialSort(){
@@ -109,4 +111,6 @@ function addPost(){
 
 $(document).ready(function(){
     loadFeed();
+
 });
+
