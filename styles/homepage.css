@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+.sort{
+    text-align: right;
+    margin: 0px 150px 0px 150px;
+}
+
 .tierpost {
     text-align: center;
     vertical-align: middle;
-    margin: 40px 100px 40px 100px;
+    margin: 20px 100px 20px 100px;
     background-color: rgb(50, 50, 50);
 }
 .tierpost img {
