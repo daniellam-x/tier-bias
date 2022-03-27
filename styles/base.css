@@ -57,6 +57,58 @@ h1 {
     text-align: center;
 }
 
+.tierpost-data {
+    padding: 12px;
+}
+
+.tierpost-data-option {
+    padding: 12px;
+    background-color: #555;
+    margin: 8px;
+}
+
+.tier-ranking-box {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+.tier-ranking-box-S {
+    background-color: red;
+}
+.tier-ranking-box-A {
+    background-color: orange;
+}
+.tier-ranking-box-B {
+    background-color: yellow;
+}
+.tier-ranking-box-C {
+    background-color: lightgreen;
+}
+.tier-ranking-box-D {
+    background-color: cadetblue;
+}
+.tier-ranking-box-E {
+    background-color: purple;
+}
+.tier-ranking-box-F {
+    background-color: violet;
+}
+
+.tier-ranking-upvote {
+    height: 32px;
+    width: 32px;
+    background-color: lawngreen;
+}
+
+.tier-ranking-downvote {
+    height: 32px;
+    width: 32px;
+    background-color: red;
+}
+
+
+
 /* a:link {
     color: darkorchid;
 }
