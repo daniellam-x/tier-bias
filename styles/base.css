@@ -8,13 +8,15 @@ html, body {
     flex-direction: column;
     background-color: rgb(7, 7, 18);
     color: white;
-    font-family:  Helvetica, Arial, sans-serif;
-}
+    font-family: 'Play',
+    Arial,
+    sans-serif;
+    height: 101vh;
 
+}
 h1, p {
     padding: 10px;
 }
-
 .topnav {
     display: flex;
     flex-direction: row;
@@ -22,20 +24,27 @@ h1, p {
     align-items: center;
     justify-content: space-around;
 }
+.leftnav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2f2f2;
+    font-size: 1em;
+    text-decoration: none;
+}
 .leftnav img {
     display: block;
-    height: 3.5rem;
-    width: 3.5rem;
-
+    height: 4em;
+    width: 4em;
 }
 .rightnav a {
     display: inline-block;
     color: #f2f2f2;
-    font-size: 1.5rem;
+    font-size: 2em;
     text-decoration: none;
-    padding: 1.75rem;
+    padding: 1.25em;
 }
-.topnav a:hover {
+.rightnav a:hover {
     background-color: #ddd;
     color: black;
 }
@@ -56,7 +65,7 @@ h1 {
 }
 .footer {
     clear: both;
-    padding: 3rem;
+    padding: 3em;
     color: dimgray;
     text-align: center;
 }

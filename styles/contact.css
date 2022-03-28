@@ -1,10 +1,19 @@
 .contact-page {
-    width: 80%;
-    margin: auto;
+    width: 70%;
+    align-self: center;
     text-align: center;
 }
 
 .contact-item {
+    line-height: 2em;
     padding: 15px;
     font-size: 1.2em;
+}
+a {
+    color: purple;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+
 }
