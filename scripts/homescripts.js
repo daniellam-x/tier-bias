@@ -111,7 +111,6 @@ function addPostToFeed(post) {
     post_html += '<div class="tierpost">';
     post_html += "<h2>"+post["post-title"]+"</h2>"
     post_html += "<h3> Posted by <em>"+post["post-author"]+"</em></h3>"
-
     post_html += getHtmlFromPostTierData(post);
     post_html += "</div>"
 
