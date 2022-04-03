@@ -2,7 +2,7 @@
 
 Tier Bias is social web app that lets you share ranked lists or "tiers" about anything you want. On Tier Bias, users are encouraged to express their preferences and really _own_ their biases. There are no pictures, videos, or GIFs allowed on the site unless included as part of a ranked list, creating an environment where value is to be found in the quality of users' tiers and their reasoning behind them. 
 
-Here's the kicker, friends and other users are free to re-rank any tiers themselves -- users are given the ability to vote on any item of a posted tier, effectively creating a "second ranking" or a way to observe the public thinks surrounding your tier. Finally, the comment section serves as a 'battle ground' for friends and/or strangers to debate about the proper ranking of a tier.
+But here's the best part, friends and other users are free to re-rank any tiers themselves -- users are given the ability to vote on any item of a posted tier, effectively creating a "second ranking" or a way to observe the public thinks surrounding your tier. Finally, the comment section serves as a 'battle ground' for friends and/or strangers to debate about the proper ranking of a tier.
 
 ## User Story Examples
 
