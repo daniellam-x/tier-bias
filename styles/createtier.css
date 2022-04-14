@@ -1,11 +1,3 @@
-input {
-    font-size: 1em;
-    outline: none;
-    border-width: 0 0 2px;
-    padding: 10px;
-    width: 90%;
-    text-align: center;
-}
 
 label {
     text-align: center;
@@ -13,14 +5,21 @@ label {
 }
 
 input {
+    background: whitesmoke;
     font-family: 'Play',
         sans-serif;
     font-size: .9em;
     padding: .5em;
-    margin-top: .5em;
-    width: 80%;
+    margin-top: 1em;
+    
+    width: 50%;
+    min-width: 100px;
+    
+    height: 2%;
+    min-height: 30px;
+    
     border: none;
-    margin: 10px 10px 10px 10px;
+    text-align: center;
     
     position: absolute;
     left: 50%;
@@ -29,23 +28,22 @@ input {
 }
 
 button {
+    background: whitesmoke;
     font-family: 'Play',
         sans-serif;
     font-size: 1em;
     padding: .5em;
-    margin-top: 1em;
     border-radius: 2em;
-    width: 70%;
     border: none;
-
-    position: absolute;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    
+    width: 50%;
+    min-width: 100px;
+    height: 2%;
+    min-height: 30px;
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.30);
 }
 
@@ -53,9 +51,8 @@ button:active {
     font-family: 'Play',
         sans-serif;
     margin: 50px;
-    background: linear-gradient(0deg, rgb(101, 28, 191) 0%, rgb(7, 7, 18) 85%);
-    background-color: rgb(101, 28, 191);
-    color: white;
+
+    color: whitesmoke;
     height: 90%;
     text-align:center;
     align-content: center;
