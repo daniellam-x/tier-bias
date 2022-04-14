@@ -1,3 +1,62 @@
+input {
+    font-size: 1em;
+    outline: none;
+    border-width: 0 0 2px;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+label {
+    text-align: center;
+    font-size: 1.25em;
+}
+
+input {
+    font-family: 'Play',
+        sans-serif;
+    font-size: .9em;
+    padding: .5em;
+    margin-top: .5em;
+    width: 80%;
+    border: none;
+    margin: 10px 10px 10px 10px;
+    
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button {
+    font-family: 'Play',
+        sans-serif;
+    font-size: 1em;
+    padding: .5em;
+    margin-top: 1em;
+    border-radius: 2em;
+    width: 70%;
+    border: none;
+
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.30);
+}
+
 .tierform {
-    text-align: center
+    font-family: 'Play',
+        sans-serif;
+    margin: 50px;
+    background: linear-gradient(0deg, rgb(101, 28, 191) 0%, rgb(7, 7, 18) 85%);
+    background-color: rgb(101, 28, 191);
+    color: white;
+    height: 90%;
+    text-align:center;
+    align-content: center;
 }

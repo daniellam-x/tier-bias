@@ -6,7 +6,7 @@
 html, body {
     display: flex;
     flex-direction: column;
-    background-color: rgb(7, 7, 18);
+    background: linear-gradient(90deg, rgb(7, 7, 18) 0%, rgb(101, 28, 191) 100%);
     color: white;
     font-family: 'Play',
     Arial,
