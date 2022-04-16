@@ -8,12 +8,23 @@ input {
     background: whitesmoke;
     font-family: 'Play',
         sans-serif;
-    font-size: .9em;
-    padding: .5em;
-    margin-top: 1em;
-    
+
+    display: block;
+
+    text-align: center;
+
     width: 50%;
     min-width: 100px;
+
+    margin: auto;
+
+    padding: .5em;
+    margin-top: 1em;
+
+    /* font-size: .9em;
+
+    
+
     
     height: 2%;
     min-height: 30px;
@@ -24,7 +35,7 @@ input {
     position: absolute;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 button {
@@ -43,6 +54,26 @@ button {
 }
 
 button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.30);
+}
+
+input[type=submit] {
+    background: whitesmoke;
+    font-family: 'Play',
+        sans-serif;
+    font-size: 1em;
+    padding: .5em;
+    border-radius: 2em;
+    border: none;
+    
+    width: 50%;
+    min-width: 100px;
+    height: 2%;
+    min-height: 30px;
+}
+
+input[type=submit]:active {
     transform: scale(0.95);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.30);
 }

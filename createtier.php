@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,8 +7,9 @@
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/createtier.css">
     <link rel="icon" href="images/logo.png">
-    <script defer src="createtierscript.js"></script>
+    <!-- <script defer src="createtierscript.js"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="Tier Bias, a new social media">
     <meta name="author" content="Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble">
@@ -43,55 +42,40 @@
             Create Tier
         </h1>
     </div>
-
-    <?php
-
-
-
-        if (isset($_POST["confirm"])) {
-            thanksPage();
-        } else {
-            tierForm ();
-        }
+    <div class="tierform">
+        <h1>New Tier</h1>
+        <?php
 
 
-        #######################################################################
 
-        function tierForm ()
-        {
-            $script = $_SERVER['PHP_SELF'];
+            if (isset($_POST["confirm"])) {
+                thanksPage();
+            } else {
+                tierForm();
+            }
 
-            print <<<FORM
-                <form method = "post" action = "$script">
-                    <label for="title">Tier Title</label><br><br>
-                    <input type="text" id="title" value="Title"><br><br>
-                    <label for="row" id="rowlabel">Enter Rankings</label><br><br>
-                    <input type="text" id="row" value="Enter List Element"><br><br>
-                    <input type="text" id="row" value="Enter List Element"><br><br><br>
-                    <button>Add Row</button><br><br>
-                    <button>Delete Row</button><br><br>
-                    <button>Post Tier List</button><br><br>
-                    <button>Delete Tier List</button>
-                    <input type="submit" name="confirm" value="Confirm Tier"><br><br>
-                </form>
-            FORM;
-        }
 
-        #######################################################################
+            // #######################################################################
 
-        function thanksPage() {
-            print <<<PAGE3
+            function tierForm ()
+            {
+                $script = $_SERVER['PHP_SELF'];
 
-                <h2>
-                    Your tier has been submitted.
-                </h2>
-                
-            PAGE3;
-        }
+                echo "<form method = 'post' action = '$script'>";
+                echo "  <div id='form-contents'>";
+                echo "  </div>";
+                echo '</form>';
+            }
 
-    
-    ?>
+            // #######################################################################
 
+            function thanksPage() {
+               echo "Your tier has been submitted";
+            }
+
+        
+        ?>
+    </div>
     
     <div class="footer">
         <p>
@@ -99,6 +83,7 @@
         </p>
     </div>
 
+    <script src="./scripts/createtierscripts.js"></script>
 </body>
     
 </html>
