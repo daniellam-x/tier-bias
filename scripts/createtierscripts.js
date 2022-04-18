@@ -14,7 +14,7 @@ function title() {
 }
 
 function rankingLabel() {
-    return '<label>Enter Rankings</label><br><br>\n';
+    return "<label style='content-align:center;'>Enter Rankings</label><br><br>\n";
 }
 
 function rankingInput() {

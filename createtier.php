@@ -66,7 +66,7 @@
                 $script = $_SERVER['PHP_SELF'];
 
                 echo "<form method = 'post' action = '$script'>";
-                echo "  <div id='form-contents'>";
+                echo "  <div id='form-contents' style='text-align:center'>";
                 echo "  </div>";
                 echo '</form>';
             }
@@ -83,7 +83,7 @@
     
     <div class="footer">
         <p>
-            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/14/2022
+            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/18/2022/2022
         </p>
     </div>
 

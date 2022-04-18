@@ -58,12 +58,12 @@
         </p>
     </div>
     
-    <!-- dummy post skeleton, should be removed soon -->
+    <!-- dummy post skeleton, should be removed soon
     <div class="tierpost">
-        <img src="./images/logo.png" alt ="Tier Bias Logo" width="50" height="50">
         <h2>Tier Name</h2>
-        <p> Information about the tier ranking</p>
+        <p>Information about the tier ranking</p>
     </div>
+    -->
 
     <!-- post-feed container do not remove -->
     <div id="post-feed">
@@ -72,7 +72,7 @@
     
     <div class="footer">
         <p>
-            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/14/2022
+            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/18/2022/2022
         </p>
     </div>
     

@@ -7,13 +7,18 @@ html, body {
     display: flex;
     flex-direction: column;
     background: linear-gradient(90deg, rgb(7, 7, 18) 0%, rgb(101, 28, 191) 100%);
-    color: white;
+    color: whitesmoke;
     font-family: 'Play',
     Arial,
     sans-serif;
     height: 101vh;
 
 }
+
+p {
+    padding: 0px 0px 20px 0px;
+}
+
 .topNav {
     display: flex;
     flex-direction: row;

@@ -1,7 +1,11 @@
-
 label {
     text-align: center;
+    align-content: center;
     font-size: 1.25em;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 input {
@@ -20,22 +24,6 @@ input {
 
     padding: .5em;
     margin-top: 1em;
-
-    /* font-size: .9em;
-
-    
-
-    
-    height: 2%;
-    min-height: 30px;
-    
-    border: none;
-    text-align: center;
-    
-    position: absolute;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
 }
 
 button {
