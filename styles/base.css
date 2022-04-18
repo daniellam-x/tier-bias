@@ -14,48 +14,45 @@ html, body {
     height: 101vh;
 
 }
-h1, p {
-    padding: 10px;
-}
-.topnav {
+.topNav {
     display: flex;
     flex-direction: row;
     background-color: #333;
     align-items: center;
     justify-content: space-around;
 }
-.leftnav a {
+.leftNav a {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
     color: #f2f2f2;
     font-size: 1em;
     text-decoration: none;
 }
-.leftnav img {
+.leftNav img {
     display: block;
-    height: 4em;
-    width: 4em;
+    height: 2.5em;
+    width: 2.5em;
 }
-.rightnav a {
+.rightNav li {
     display: inline-block;
+}
+.rightNav li > a {
+    display: inline-block;
+    /* list-style-type: none; */
     color: #f2f2f2;
     font-size: 1em;
     text-decoration: none;
-    padding: 1.25em;
+    padding: 1.25em 1em 1em 1em;
 }
-.rightnav a:hover {
+.rightNav a:hover {
     background-color: #ddd;
     color: black;
 }
-/* .topnav a.active {
+/* .topNav a.active {
     background-color: #ddd;
     color: black;
 } */
-h1 {
-    font-size: 3.0em;
-}
-.topnav {
+.topNav {
     position: sticky;
     top: 0px;
 }
