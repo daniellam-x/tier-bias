@@ -18,7 +18,7 @@ function rankingLabel() {
 }
 
 function rankingInput() {
-    return '<input type="text" placeholder="Enter List Element">';
+    return '<input type="text" placeholder="Enter List Element"><br><br>';
 }
 
 function rankingSection() {
@@ -47,6 +47,8 @@ function removeTierElement() {
     console.log("removeTierElement");
     if($("#rankings-inputs").children().length > 2) {
         $("#rankings-inputs").find("input:last").remove();
+        $("#rankings-inputs").find("br:last").remove();
+        $("#rankings-inputs").find("br:last").remove();
     }
 }
 
