@@ -13,6 +13,11 @@
     <meta charset="UTF-8">
     <meta name="description" content="Tier Bias, a new social media">
     <meta name="author" content="Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble">
+    <style> 
+        .center {
+            text-align: center;
+        }
+    </style>
 </head> 
 
 <body>
@@ -74,7 +79,30 @@
             // #######################################################################
 
             function thanksPage() {
-               echo "Your tier has been submitted";
+                if(isset($_POST["tier-title"])) {
+                    echo "<div class='center'>";
+                    echo "Tier Title: " . $_POST["tier-title"];
+                    echo "</div>";
+                }
+
+                if(isset($_POST["tier-element"])) {
+                    $tiers = $_POST["tier-element"];
+                    echo "<div class='center'>";
+                    echo "Tier Elements: " ;
+                    print "<ul>";
+                    foreach ($tiers as $key => $val) {
+                        print "<li>";
+                        print $val;
+                        print "</li>"; 
+                    }
+                    print "</ul>";
+                    echo "</div>";
+                }
+
+                echo "<div class='center'>";
+                echo "Your tier has been submitted";
+                echo "</div>";
+
             }
 
         
