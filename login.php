@@ -1,27 +1,27 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", "on");
-    session_start();
-    // session_unset();
-    // session_destroy();
+error_reporting(E_ALL);
+ini_set("display_errors", "on");
+session_start();
+// session_unset();
+// session_destroy();
 
-    $error = "";
+$error = "";
 
-    if (isset($_POST['submit'])) {
-        if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['repeat'])) {
-            $error = "*" . "Please fill all the required fields";
-        } else if (!preg_match('/^[A-Za-z0-9]{3,}$/', $_POST['username'])) {
-            $error = "*" . "Username must contain at least three characters with only letters and digits";
-        } else if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/', $_POST['password'])) {
-            $error = "*" . "Password must contain at least eight characters, one letter, one number and one special character";
-        } else if ($_POST['password'] !== $_POST['repeat']) {
-            $error = "*" . "Password and the repeat password must match";
-        } else {
-            $_SESSION['loggedIn'] = true;
-            $username = $_POST['username'];
-            $_SESSION['username'] = $username;
-        };
-    }
+if (isset($_POST['submit'])) {
+    if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['repeat'])) {
+        $error = "* " . " Please fill all the required fields";
+    } else if (!preg_match('/^[A-Za-z0-9]{3,}$/', $_POST['username'])) {
+        $error = "*" . " Username must contain at least three characters with only letters and digits";
+    } else if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/', $_POST['password'])) {
+        $error = "*" . " Password must contain at least eight characters, one letter, one number and one special character";
+    } else if ($_POST['password'] !== $_POST['repeat']) {
+        $error = "*" . " Password and the repeat password must match";
+    } else {
+        $_SESSION['loggedIn'] = true;
+        $username = $_POST['username'];
+        $_SESSION['username'] = $username;
+    };
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,13 +57,14 @@
                 <li><a href="contact.php">Contact Us</a></li>
                 <!-- <li><a href="login.php">Login</a></li> -->
                 <?php
-                    if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-                        echo "<li><a href='user.php'>" . $_SESSION['username'] . "</a></li>";
-                        // unset($_SESSION['loggedIn']);
-                        // unset($_SESSION['username']);
-                    } else {
-                        echo "<li><a href='login.php'>Login</a></li>";
-                    }
+                if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+                    echo "<li><a href='user.php'>" . $_SESSION['username'] . "</a></li>";
+                    header("Location:login.php");
+                    // unset($_SESSION['loggedIn']);
+                    // unset($_SESSION['username']);
+                } else {
+                    echo "<li><a href='login.php'>Login</a></li>";
+                }
                 ?>
             </ul>
         </div>
@@ -85,11 +86,13 @@
             <div class="field">
                 <input name="repeat" type="password" placeholder="repeat password">
             </div>
-            <?php
+            <div id="loginErr">
+                <?php
                 if (isset($_POST['submit']) && isset($error)) {
-                    echo "<p style='color:red; font-size:.75em; padding-top:1em;'>" . $error . "</p>";
+                    echo "<p style='color:red; font-size:.75em;'>" . $error . "</p>";
                 }
-            ?>
+                ?>
+            </div>
             <div class="buttons">
                 <button type="submit" name="submit" id="registerBtn">Login</button>
                 <button type="reset" name="reset" id="clearBtn">Clear</button>
