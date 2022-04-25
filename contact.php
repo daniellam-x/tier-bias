@@ -75,6 +75,13 @@
                     Hello! I am a senior at the University of Texas at Austin that is graduating May 2022. My major is Art and Entertainment Technologies with a certificate in Computer Science (18 hours). I have worked as an art director intern, VR assistant, and NASA intern. This shows my diverse skills from developing 3D art assets for VR games to leading teams to complete projects.              
                 </p>
             </div>
+            <div class="contact-item">
+                <h3>Related Sites</h3>
+                <a href="https://tiermaker.com/">tiermaker.com</a>
+                <p>
+                     A tierlist website focused on giving out tierlist templates to edit in file editing software.
+                </p>
+            </div>
         </div>
     </div>
     
