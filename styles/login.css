@@ -5,15 +5,16 @@
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
-    width: 20em;
+    width: 18em;
     border-radius: .5em;
-    font-size: 2em;
+    font-size: 1em;
 }
 .login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1em 0;
 }
 .login h1 {
     color: rgb(72, 39, 133);
@@ -23,11 +24,11 @@
 .login .logo {
     height: 3em;
     width: 3em;
-    margin: 1em;
+    /* margin: 1em; */
 }
-.field {
-    padding-top: 2em;
-}
+/* .field {
+    padding-top: .5em;
+} */
 
 input {
     background: white;
@@ -48,7 +49,7 @@ input {
 
     margin: auto;
 
-    padding: 10px 20px;
+    padding: .5em 1em;
     margin-top: 1em;
 }
 
@@ -67,14 +68,13 @@ input:active {
         sans-serif;
 }
 .buttons {
-    padding: 3em 0 2em 0;
+    padding: 1em 0 1em 0;
 }
 button {
     font-family: 'Play',
         sans-serif;
     font-size: 1em;
     padding: .5em;
-    margin-top: .5em;
     border-radius: 2em;
     width: 100%;
     border: none;
@@ -86,4 +86,12 @@ button:active {
 #registerBtn {
     background-color: rgb(101, 28, 191);
     color: whitesmoke;
+}
+#clearBtn {
+    margin-top: 1em;
+}
+#loginErr {
+    margin-top: 1em;
+    width: 100%;
+    min-height: 3em;
 }
