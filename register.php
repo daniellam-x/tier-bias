@@ -25,28 +25,34 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($_POST['username']) || empty($_POST['password'])) {
+    if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['repeat'])) {
         $error = "* " . " Please fill all the required fields";
     } else if (!preg_match('/^[A-Za-z0-9]{3,}$/', $_POST['username'])) {
         $error = "*" . " Username must contain at least three characters with only letters and digits";
     } else if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/', $_POST['password'])) {
         $error = "*" . " Password must contain at least eight characters, one letter, one number and one special character";
+    } else if ($_POST['password'] !== $_POST['repeat']) {
+        $error = "*" . " Password and the repeat password must match";
     } else {
         // username valid, so check if already exists
         $select = "SELECT * FROM users WHERE username = ?";
         $query = $mysqli->prepare($select);
         $query->bind_param("s", $username);
         $query->execute();
-        ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-        if ($result->num_rows == 0) {
-            $error = "*" . " Username not found";
+        if ($query->error) {
+            die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
+        } else if ($query->num_rows > 0) {
+            $error = "*" . " Username already exists";
         } else {
-            $row = $result->fetch_assoc();
-            if ($password != $row['password']) {
-                $error = "*" . " Incorrect username or password";
-            } else {
-                $_SESSION['loggedIn'] = true;
-                $_SESSION['username'] = $username;
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $username;
+
+            $insert = "INSERT INTO users VALUES (?, ?)";
+            $query = $mysqli->prepare($insert);
+            $query->bind_param("ss", $username, $password);
+            $query->execute();
+            if ($query->error) {
+                die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
             }
         }
     }
@@ -56,7 +62,7 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/login.css">
     <link rel="icon" href="images/logo.png">
@@ -101,15 +107,18 @@ if (isset($_POST['submit'])) {
     <div id="container">
         <div class="login">
             <img src="images/logo.png" class="logo" width="30" height="30">`
-            <h1>Login</h1>
+            <h1>Sign up</h1>
         </div>
 
-        <form action="login.php" method="post">
+        <form action="register.php" method="post">
             <div class="field">
                 <input name="username" type="text" placeholder="username">
             </div>
             <div class="field">
                 <input name="password" type="password" placeholder="password">
+            </div>
+            <div class="field">
+                <input name="repeat" type="password" placeholder="repeat password">
             </div>
             <div id="loginErr">
                 <?php
@@ -119,14 +128,15 @@ if (isset($_POST['submit'])) {
                 ?>
             </div>
             <div class="buttons">
-                <button type="submit" name="submit" id="registerBtn">Log in</button>
+                <button type="submit" name="submit" id="registerBtn">Sign up</button>
                 <button type="reset" name="reset" id="clearBtn">Clear</button>
             </div>
         </form>
     </div>
     <div id="container2">
-        <p>Don't have an account?  <a href="register.php">Sign up</a></p>
+        <p>Have an account?  <a href="login.php">Log in</a></p>
     </div>
+
 
 
     <div class="footer">
