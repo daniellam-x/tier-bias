@@ -87,7 +87,7 @@
 
                 if(isset($_POST["tier-element"])) {
                     $tiers = $_POST["tier-element"];
-                    echo "<div class='center'>";
+                    echo "<div id='tier-submit-page' class='center'>";
                     echo "Tier Elements: " ;
                     print "<ul>";
                     foreach ($tiers as $key => $val) {
