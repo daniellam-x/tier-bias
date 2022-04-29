@@ -1,13 +1,26 @@
 #container {
     align-self: center;
-    margin: auto;
-    padding: 1em 2em;
+    margin-top: auto;
+    padding: 1.2em 2em;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     width: 18em;
     border-radius: .5em;
+    /* font-size: 1em; */
+}
+#container2 {
+    align-self: center;
+    padding: 1em 2em;
+    background-color: whitesmoke;
+    display: flex;
+    width: 18em;
+    border-radius: .5em;
     font-size: 1em;
+    color: black;
+    margin-top: .5em;
+    margin-bottom: auto;
+    justify-content: center;
 }
 .login {
     display: flex;
@@ -72,10 +85,10 @@ input:active {
 }
 button {
     font-family: 'Play',
-        sans-serif;
+    sans-serif;
+    border-radius: .5em;
     font-size: 1em;
     padding: .5em;
-    border-radius: 2em;
     width: 100%;
     border: none;
 }
@@ -94,4 +107,10 @@ button:active {
     margin-top: 1em;
     width: 100%;
     min-height: 3em;
+}
+#container2 p {
+    font-size: .9em;
+}
+#container2 a {
+    text-decoration: none;
 }
