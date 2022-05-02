@@ -24,6 +24,8 @@ if (isset($_POST['submit'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $username = $mysqli->real_escape_string($username);
+    $password = $mysqli->real_escape_string($password);
 
     if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['repeat'])) {
         $error = "* " . " Please fill all the required fields";
@@ -39,21 +41,23 @@ if (isset($_POST['submit'])) {
         $query = $mysqli->prepare($select);
         $query->bind_param("s", $username);
         $query->execute();
-        if ($query->error) {
-            die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-        } else if ($query->num_rows > 0) {
-            $error = "*" . " Username already exists";
-        } else {
-            $_SESSION['loggedIn'] = true;
-            $_SESSION['username'] = $username;
-
-            $insert = "INSERT INTO users VALUES (?, ?)";
+        ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
+        $query->close();
+        if ($result->num_rows == 0) {
+            // if not, insert new user into database
+            $insert = "INSERT INTO users(username, password) VALUES (?, ?)";
             $query = $mysqli->prepare($insert);
             $query->bind_param("ss", $username, $password);
             $query->execute();
             if ($query->error) {
                 die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
             }
+            $query->close();
+
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $username;
+        } else {
+            $error = "*" . " Username already exists";
         }
     }
 }
@@ -61,7 +65,9 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <title>Sign Up</title>
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/login.css">
@@ -134,7 +140,7 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
     <div id="container2">
-        <p>Have an account?  <a href="login.php">Log in</a></p>
+        <p>Have an account? <a href="login.php">Log in</a></p>
     </div>
 
 
