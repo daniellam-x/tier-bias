@@ -1,7 +1,8 @@
+var audio = new Audio('./sounds/submit-tier.wav');
 
 function titleInner() {
     return '<label for="title">Tier Title</label><br><br>\n' +
-        '<input type="text" id="title" placeholder="Title"><br><br>\n';
+        '<input type="text" id="title" name="tier-title" placeholder="Title"><br><br>\n';
     ;
 }
 
@@ -17,14 +18,16 @@ function rankingLabel() {
     return "<label style='content-align:center;'>Enter Rankings</label><br><br>\n";
 }
 
-function rankingInput() {
-    return '<input type="text" placeholder="Enter List Element"><br><br>';
+function rankingInput(index) {
+    let indices = "SABCDEF";
+    let i = indices[index];
+    return `<input type="text" name="tier-element[]" placeholder="Enter List Element - ${i}">`;
 }
 
 function rankingSection() {
     return $("<div></div>").attr("id", "rankings-inputs")
-                .append(rankingInput())
-                .append(rankingInput());
+                .append(rankingInput(0))
+                .append(rankingInput(1));
 }
 
 function rankings() {
@@ -38,8 +41,9 @@ function rankings() {
 
 function addTierElement() {
     console.log("addTierElement");
-    if($("#rankings-inputs").children().length < 26) {
-        $("#rankings-inputs").append(rankingInput());
+    if($("#rankings-inputs").children().length < 7) {
+        let i = $("#rankings-inputs").children().length;
+        $("#rankings-inputs").append(rankingInput(i));
     }
 }
 
@@ -91,6 +95,13 @@ function render() {
         .append(rankings())
         .append(editButtons());
 
+        if($("#tier-submit-page").length > 0) {
+            setTimeout(() => {
+                audio.play();
+            }, 100)
+        }
 }
+$( document ).ready(function() {
+    render();
+});
 
-render();

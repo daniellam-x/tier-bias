@@ -79,7 +79,19 @@
             echo '</form>';
         }
 
-        // #######################################################################
+                if(isset($_POST["tier-element"])) {
+                    $tiers = $_POST["tier-element"];
+                    echo "<div id='tier-submit-page' class='center'>";
+                    echo "Tier Elements: " ;
+                    print "<ul>";
+                    foreach ($tiers as $key => $val) {
+                        print "<li>";
+                        print $val;
+                        print "</li>"; 
+                    }
+                    print "</ul>";
+                    echo "</div>";
+                }
 
         function thanksPage()
         {
