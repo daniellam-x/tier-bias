@@ -47,9 +47,51 @@
     </div>
     
     <div class="search">
-        <form>
+        <form method = "POST" action="search.php">
             <input type="text" id="search" name="search" value="Search here"><br>
         </form>
+    </div>
+    
+    <div class="content">
+
+        <?php
+            /*
+            $searchword = $_POST["search"]
+            
+            // Database parameters
+            $server = "spring-2022.cs.utexas.edu";
+            $user = "cs329e_bulko_brandonk";
+            $pwd = "medal&high4smoke";
+            $dbName = "cs329e_bulko_brandonk";
+                
+            // Connects to server
+            $mysqli = new mysqli ($server, $user, $pwd, $dbName);
+        
+            // Makes sure field is filled
+            if ($searchword != "") {
+                
+                $usersql = "SELECT * FROM tiers WHERE title='".$searchword."'";   
+                $result = $mysqli->query($usersql);  
+            
+                if (!$mysqli->query($usersql)) {
+                    echo("Error description: ".$mysqli- error);
+                    
+                } else {
+                    
+                    // For each row found, it is posted
+                    while($row = $result->fetch_assoc()){
+                        echo "Title: " . $row["title"]. " - Written by: " . $row["username"]."<br>";
+                    }
+                    
+                }
+                
+            }
+            
+            // Exits server
+            $mysqli->close();
+            */
+        ?>
+
     </div>
     
     <div class="footer">
