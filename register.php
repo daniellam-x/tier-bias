@@ -147,7 +147,7 @@ if (isset($_POST['submit'])) {
 
     <div class="footer">
         <p>
-            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/18/2022/2022
+            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 5/6/2022
         </p>
     </div>
 
