@@ -2,7 +2,7 @@ var audio = new Audio('./sounds/submit-tier.wav');
 
 function titleInner() {
     return '<label for="title">Tier Title</label><br><br>\n' +
-        '<input type="text" id="title" name="tier-title" placeholder="Title"><br><br>\n';
+        '<input type="text" required id="title" name="tier-title" placeholder="Title"><br><br>\n';
     ;
 }
 
@@ -18,10 +18,29 @@ function rankingLabel() {
     return "<label style='content-align:center;'>Enter Rankings</label><br><br>\n";
 }
 
+function hasDuplicates(list) {
+    return new Set(list).size !== list.length
+
+}
+
+function validateForm() {
+    let values = [];
+    $("#rankings-inputs").children("input").each(  function() {
+        values.push(this.value);
+    });
+
+    values = values.map( i => i.toLowerCase()).map(i => i.trim())
+
+    if(hasDuplicates(values)) {
+        alert("You must have unique values for each tier.");
+        return false;
+    }
+}
+
 function rankingInput(index) {
     let indices = "SABCDEF";
     let i = indices[index];
-    return `<input type="text" name="tier-element[]" placeholder="Enter List Element - ${i}">`;
+    return `<input type="text" required name="tier-element[]" placeholder="Enter List Element - ${i}">`;
 }
 
 function rankingSection() {
