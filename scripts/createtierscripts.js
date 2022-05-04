@@ -40,7 +40,7 @@ function validateForm() {
 function rankingInput(index) {
     let indices = "SABCDEF";
     let i = indices[index];
-    return `<input type="text" required name="tier-element[]" placeholder="Enter List Element - ${i}">`;
+    return `<input type="text" required name="tier-element[${i.toLowerCase()}_tier]" placeholder="Enter List Element - ${i}">`;
 }
 
 function rankingSection() {
