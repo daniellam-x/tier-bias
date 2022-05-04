@@ -2,7 +2,7 @@
 const likeSort = document.getElementById('likeSort');
 const newSort = document.getElementById('newSort');
 
-const sorted = undefined;
+let sorted;
 
 likeSort.addEventListener('click', () => {
     sorted = true

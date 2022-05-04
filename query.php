@@ -17,120 +17,97 @@ $mysqli->select_db($dbName) or die($mysqli->error);
 
 $sort = $_GET['sort'];
 
-if ($sort == 'new') {
+if ($sort == 'likes') {
+    
+    $select = "SELECT * FROM tiers ORDER BY tier_likes DESC";
+    $query = $mysqli->prepare($select);
+    $query->execute();
+    ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
+
+} else {
+
     $select = "SELECT * FROM tiers ORDER BY date_created DESC";
     $query = $mysqli->prepare($select);
     $query->execute();
     ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
-        $tier .= "<div class='tierPost'>";
-        $tier .= "<span class='material'symbols-outlined'>account_circle</span>";
-
-        $tier .= "<div class='tierContent'>";
-
-        $tier .= "<p class='username'>$row[username]</p>";
-
-        $tier .= "<p class='title'>$row[title]</p>";
-
-        $tier .= "<div class='tier'><span>s</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>a</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>b</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>c</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>d</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>e</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-        $tier .= "<div class='tier'><span>f</span>";
-        $tier .= "<p><!-- tier item goes here --></p>";
-
-        $tier .= "<p class='upVotes'><!-- upvote count here --></p>";
-        $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-        $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-        $tier .= "<p class='downVotes'><!-- upvote count here --></p>";
-        $tier .= "</div>";
-
-        $tier .= "</div>";
-            
-        $tier .= "<span class='material-symbols-outlined'>favorite</span>";
-        $tier .= "<p class='likes'><!-- like count here --></p>";
-
-        $tier .= "</div>";
-    }
 }
-// CHECK
-$select = "SELECT * FROM passwords WHERE username = ?";
-$query = $mysqli->prepare($select);
-$query->bind_param("s", $username);
-$query->execute();
-($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-if ($result->num_rows == 0) {
-    // INSERT
-    $insert = "INSERT INTO passwords VALUES (?, ?)";
-    $query = $mysqli->prepare($insert);
-    $query->bind_param("ss", $username, $password);
-    $query->execute();
-    if ($query->error) {
-        die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-    } else {
-        echo "New user registered";
-    }
-} else {
-    $row = $result->fetch_assoc();
-    if ($password != $row['password']) {
-        // UPDATE
-        $update = "UPDATE passwords SET password = ? WHERE username = ?";
-        $query = $mysqli->prepare($update);
-        $query->bind_param("ss", $password, $username);
-        $query->execute();
-        if ($query->error) {
-            die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
-        } else {
-            echo "Password changed";
-        }
-    } else {
-        // CONFIRM
-        echo "User and password confirmed";
-    }
+    
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+    $tier .= "<div class='tierPost'>";
+    $tier .= "<span class='material'symbols-outlined'>account_circle</span>";
+
+    $tier .= "<div class='tierContent'>";
+
+    $tier .= "<p class='username'>$row[username]</p>";
+
+    $tier .= "<p class='title'>$row[title]</p>";
+
+    $tier .= "<div class='tier'><span>s</span>";
+    $tier .= "<p>$row[s_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[s_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[s_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>a</span>";
+    $tier .= "<p>$row[a_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[a_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[a_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>b</span>";
+    $tier .= "<p>$row[b_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[b_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[b_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>c</span>";
+    $tier .= "<p>$row[c_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[c_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[c_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>d</span>";
+    $tier .= "<p>$row[d_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[d_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[d_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>e</span>";
+    $tier .= "<p>$row[e_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[e_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[e_down]</p>";
+    $tier .= "</div>";
+    $tier .= "<div class='tier'><span>f</span>";
+    $tier .= "<p>$row[f_tier]</p>";
+
+    $tier .= "<p class='upVotes'>$row[f_up]</p>";
+    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
+    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<p class='downVotes'>$row[f_down]</p>";
+    $tier .= "</div>";
+
+    $tier .= "</div>";
+        
+    $tier .= "<span class='material-symbols-outlined'>favorite</span>";
+    $tier .= "<p class='likes'>$row[tier_likes]</p>";
+
+    $tier .= "</div>";
 }
+
+echo $tier;
 ?>
