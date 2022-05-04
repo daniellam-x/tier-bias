@@ -57,8 +57,8 @@
     <div class="sort">
         <p>
             Sort by:
-            <button class=sortBy onclick="likedSort()">Most Controversial</button>
-            <button class=sortBy onclick="newestSort()">Newest Post</button>
+            <button id="likeSort" class=sortBy onclick="likedSort()">Most Liked</button>
+            <button id="newSort" class=sortBy onclick="newestSort()">Newest</button>
         </p>
     </div>
 
