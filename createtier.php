@@ -58,6 +58,8 @@
         <!-- <h1>New Tier</h1> -->
         <?php
 
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
 
 
         if (isset($_POST["confirm"])) {
@@ -79,8 +81,88 @@
             echo '</form>';
         }
 
+        function insertTier($sql) {
+            $username = "\"Brandon\"";
+            $title = "NULL";
+            $s_tier = "NULL";
+            $a_tier = "NULL";
+            $b_tier = "NULL";
+            $c_tier = "NULL";
+            $d_tier = "NULL";
+            $e_tier = "NULL";
+            $f_tier = "NULL";
+            if (isset($_POST["tier-title"])) {
+                $title = $_POST["tier-title"];
+                $title = "\"$title\"";
+            }
+
+            if (isset($_POST["tier-element"])) {
+                $tiers = $_POST["tier-element"];
+                if (isset($tiers["s_tier"])) {
+                    $s_tier = $tiers["s_tier"];
+                    $s_tier = "\"$s_tier\"";
+                }
+                if (isset($tiers["a_tier"])) {
+                    $a_tier = $tiers["a_tier"];
+                    $a_tier = "\"$a_tier\"";
+                }
+                if (isset($tiers["b_tier"])) {
+                    $b_tier = $tiers["b_tier"];
+                    $b_tier = "\"$b_tier\"";
+                }
+                if (isset($tiers["c_tier"])) {
+                    $c_tier = $tiers["c_tier"];
+                    $c_tier = "\"$c_tier\"";
+                }
+                if (isset($tiers["d_tier"])) {
+                    $d_tier = $tiers["d_tier"];
+                    $d_tier = "\"$d_tier\"";
+                }
+                if (isset($tiers["e_tier"])) {
+                    $e_tier = $tiers["e_tier"];
+                    $e_tier = "\"$e_tier\"";
+                }
+                if (isset($tiers["f_tier"])) {
+                    $f_tier = $tiers["f_tier"];
+                    $f_tier = "\"$f_tier\"";
+                }
+            }
+            
+            $command = "INSERT INTO tiers (username, title, s_tier, a_tier, b_tier, c_tier, d_tier, e_tier, f_tier) VALUES ";
+            $format = "( %s, %s, %s, %s, %s, %s, %s, %s, %s)";
+            $args = sprintf($format, $username, $title, $s_tier, $a_tier, $b_tier, $c_tier, $d_tier, $e_tier, $f_tier);
+            $command = $command . $args;
+            try {
+                $result = $sql->query($command);
+                if($result) {
+                    return "Success";
+                } else {
+                    return "Error";
+                }
+            } catch (Exception $e) {
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+            }
+
+            return "Error";
+        }
+
         function thanksPage()
         {
+
+            $server = "spring-2022.cs.utexas.edu";
+            $user   = "cs329e_bulko_brandonk";
+            $pwd    = "medal&high4smoke";
+            $dbName = "cs329e_bulko_brandonk";
+    
+            $mysqli = new mysqli($server, $user, $pwd, $dbName);
+    
+            if ($mysqli->connect_errno) {
+                die('Connect Error: ' . $mysqli->connect_errno . ": " . $mysqli->connect_error);
+            }
+    
+
+            $res = insertTier($mysqli);
+
             if (isset($_POST["tier-title"])) {
                 echo "<div class='center'>";
                 echo "Tier Title: " . $_POST["tier-title"];
@@ -94,16 +176,22 @@
                 print "<ul>";
                 foreach ($tiers as $key => $val) {
                     print "<li>";
-                    print $val;
+                    print $key . "  " . $val;
                     print "</li>";
                 }
                 print "</ul>";
                 echo "</div>";
             }
-
-            echo "<div class='center'>";
-            echo "Your tier has been submitted";
-            echo "</div>";
+            if($res == "Success") {
+                echo "<div class='center'>";
+                echo "Your tier has been submitted";
+                echo "</div>";
+            } else {
+                echo "<div class='center'>";
+                echo "Your tier failed to be submitted";
+                echo "</div>";
+            }
+           
         }
 
 
@@ -112,7 +200,7 @@
 
     <div class="footer">
         <p>
-            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 5/6/2022
+            Lori VanHoose, Daniel Lam, Jessica Trejo, Brandon Kimble - 4/18/2022/2022
         </p>
     </div>
 
