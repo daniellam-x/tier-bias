@@ -61,12 +61,19 @@
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-
-        if (isset($_POST["confirm"])) {
-            thanksPage();
+        if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+            if (isset($_POST["confirm"])) {
+                thanksPage();
+            } else {
+                tierForm();
+            }
         } else {
-            tierForm();
+            echo "<div class='center'>";
+            echo "Please sign in to create tiers.";
+            echo "</div>";
         }
+
+      
 
 
         // #######################################################################
@@ -82,7 +89,8 @@
         }
 
         function insertTier($sql) {
-            $username = "\"Brandon\"";
+            $username = $_SESSION['username'];
+            $username = "\"$username\"";
             $title = "NULL";
             $s_tier = "NULL";
             $a_tier = "NULL";
