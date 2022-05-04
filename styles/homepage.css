@@ -7,24 +7,10 @@
 h2 {
     padding: 20px 0px 10px 0px;
 }
-
 .sort{
     text-align: right;
     margin: 0px 150px 0px 150px;
 }
-
-.tierpost {
-    text-align: center;
-    vertical-align: middle;
-    margin: 20px 100px 20px 100px;
-    background-color: rgb(50, 50, 50);
-}
-.tierpost img {
-    float: left;
-    margin: 0 10px 10px 10px;
-    padding: 2px;
-}
-
 .sortBy {
     font-family: 'Play',
         sans-serif;
@@ -35,12 +21,17 @@ h2 {
     min-width: 50px;
     border: none;
 }
-
 #abouttext {
     padding: 10px 20% 10px 20%;
 }
-
 button:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.30);
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
