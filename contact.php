@@ -6,8 +6,8 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/contact.css">
-    
-    <script defer src="contactscript.js"></script>
+    <link rel="icon" href="images/logo.png">
+    <script defer src="scripts/contactscript.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
