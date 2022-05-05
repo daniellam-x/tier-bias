@@ -16,27 +16,27 @@ newSort.addEventListener('click', () => {
     sorted = false
 });
 
-voteBtns.forEach(voteBtn => {
-    voteBtn.addEventListener('click', (e) => {
-        if (e.target.innerHTML.innerHTML == 'expand_less') {
-            let tier = e.target.parentNode;
-            // change vote number
-            tier.childNodes[2].innerHTML += 1;
-            // save tier rank
-            rank = tier.childNodes[0].innerHTML;
-            // save vote
-            voted = 'up';
-            // save post_id
-            tier_id = parseInt(tier.parentNode.parentNode.dataset.tier_id);
+// voteBtns.forEach(voteBtn => {
+//     voteBtn.addEventListener('click', (e) => {
+//         if (e.target.innerHTML.innerHTML == 'expand_less') {
+//             let tier = e.target.parentNode;
+//             // change vote number
+//             tier.childNodes[2].innerHTML += 1;
+//             // save tier rank
+//             rank = tier.childNodes[0].innerHTML;
+//             // save vote
+//             voted = 'up';
+//             // save post_id
+//             tier_id = parseInt(tier.parentNode.parentNode.dataset.tier_id);
 
-            vote();
-        } else {
-            e.target.parentNode.childNodes[5].innerHTML -= 1;
-            voted = 'down';
-            vote();
-        }
-    })
-});
+//             vote();
+//         } else {
+//             e.target.parentNode.childNodes[5].innerHTML -= 1;
+//             voted = 'down';
+//             vote();
+//         }
+//     })
+// });
 
 function sort() {
     let ajaxRequest; // The variable that makes Ajax possible!
