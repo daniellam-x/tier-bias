@@ -46,8 +46,11 @@
     <div class="content">
         <h1>
             <a href="./homepage.php"><img src="./images/logo.png" alt="Tier Bias Logo" width="50" height="50" /></a>
-            Username here
+            <?php echo "<div>" . $_SESSION['username'] . "</div>"; ?>
         </h1>
+    </div>
+
+    <div id="mytiers" class="tierFeed"> 
     </div>
 
     <div class="footer">
