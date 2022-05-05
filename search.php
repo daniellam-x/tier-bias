@@ -59,11 +59,11 @@
     <div class="content">
 
         <?php
-            error_reporting(E_ALL);
-            ini_set('display_errors', 1);
+            //error_reporting(E_ALL);
+            //ini_set('display_errors', 1);
         
             $searchword = $_GET['search'];
-            echo "You searched up: ".$searchword."<br>";
+            //echo "You searched up: ".$searchword."<br>";
             
             // Database parameters
             $server = "spring-2022.cs.utexas.edu";
@@ -82,7 +82,7 @@
             if ($searchword != "") {
                 
                 $usersql = "SELECT * FROM tiers WHERE title='".$searchword."'"; 
-                echo "Searching for word.. <br>";
+                //echo "Searching for word.. <br>";
                 
                 $result = $mysqli->query($usersql);  
             
