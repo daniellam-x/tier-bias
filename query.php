@@ -32,10 +32,10 @@ if ($sort == 'likes') {
     ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
 
 }
-    
+$tier  = "";
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
-    $tier = "<div class='tierPost'>";
+    $tier .= "<div class='tierPost'>";
     $tier .= "<span class='profile material-symbols-outlined'>account_circle</span>";
 
     $tier .= "<div class='tierContent'>";
