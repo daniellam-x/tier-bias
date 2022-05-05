@@ -31,11 +31,13 @@ if ($sort == 'likes') {
     $query->execute();
     ($result = $query->get_result()) or die("<script type='text/javascript'>alert('Query failed: (" . $query->error . ")');</script>");
 
-}
-$tier  = "";
+}   
+  
+$tier = "<div class='tierFeed'>";
+
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
-    $tier .= "<div class='tierPost'>";
+    $tier .= "<div class='tierPost' data-tier_id='$row[tier_id]'>";
     $tier .= "<span class='profile material-symbols-outlined'>account_circle</span>";
 
     $tier .= "<div class='tierContent'>";
@@ -44,6 +46,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $tier .= "<p class='title'>$row[title]</p>";
 
+    // grad data in query.php 
     $tier .= "<div class='tier'><span class='rank s'>S</span>";
     $tier .= "<p class='item'>$row[s_tier]</p>";
     $tier .= "<p class='upVotes'>$row[s_up]</p>";
@@ -114,5 +117,8 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $tier .= "</div>";
 }
 
+$tier .= "</div>";
+
 echo $tier;
+
 ?>
