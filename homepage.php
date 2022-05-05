@@ -10,7 +10,7 @@
     <link rel="icon" href="images/logo.png">
     <script defer src="./scripts/homescripts.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&family=Open+Sans:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8" />
@@ -61,72 +61,73 @@
         </p>
     </div>
 
-    <!-- post-feed container do not remove -->
-    <div class="tierFeed">
+    <div id='ajaxDiv'>
+        <!-- <div class="tierFeed"> -->
 
-        <!-- example tier post -->
         <!-- <div class="tierPost">
-
-            <span class="material-symbols-outlined">account_circle</span>
-
-            <div class="tierContent">
-                <p class="username"></p>
-                <p class="title"></p>
-
-                <div class="tier"><span>s</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
+    
+                <span class="material-symbols-outlined">account_circle</span>
+    
+                <div class="tierContent">
+                    <p class="username"></p>
+                    <p class="title"></p>
+    
+                    <div class="tier"><span>s</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>a</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>b</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>c</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>d</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>e</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
+                    <div class="tier"><span>f</span>
+                        <p></p>
+                        <p class="upVotes"></p>
+                        <span class="material-symbols-outlined">expand_less</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                        <p class="downVotes"></p>
+                    </div>
                 </div>
-                <div class="tier"><span>a</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
-                <div class="tier"><span>b</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
-                <div class="tier"><span>c</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
-                <div class="tier"><span>d</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
-                <div class="tier"><span>e</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
-                <div class="tier"><span>f</span>
-                    <p></p>
-                    <p class="upVotes"></p>
-                    <span class="material-symbols-outlined">expand_less</span>
-                    <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"></p>
-                </div>
+    
+                <span class="material-symbols-outlined">favorite</span>
+                <p class="likes"></p>
+    
             </div>
-
-            <span class="material-symbols-outlined">favorite</span>
-            <p class="likes"></p>
-
+    
         </div> -->
 
     </div>
