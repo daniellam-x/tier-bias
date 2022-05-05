@@ -81,7 +81,7 @@
             // Makes sure field is filled
             if ($searchword != "") {
                 
-                $usersql = "SELECT * FROM tiers WHERE title='".$searchword."'"; 
+                $usersql = "SELECT * FROM tiers WHERE title LIKE '%".$searchword."%'"; 
                 //echo "Searching for word.. <br>";
                 
                 $result = $mysqli->query($usersql);  
