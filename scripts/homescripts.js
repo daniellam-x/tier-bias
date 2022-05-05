@@ -1,6 +1,7 @@
 
 const likeSort = document.getElementById('likeSort');
 const newSort = document.getElementById('newSort');
+const upvote = document.getElementById('newSort');
 
 let sorted;
 
@@ -19,7 +20,7 @@ function sort() {
     
     ajaxRequest.onreadystatechange = function() {
         if (ajaxRequest.readyState == 4) {
-            let ajaxDisplay = document.getElementById('tierFeed');
+            let ajaxDisplay = document.querySelector('.tierFeed');
             ajaxDisplay.innerHTML = ajaxRequest.responseText;
         }
     }

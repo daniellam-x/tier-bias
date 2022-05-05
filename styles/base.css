@@ -7,7 +7,7 @@ html, body {
     display: flex;
     flex-direction: column;
     /* background: linear-gradient(90deg, rgb(7, 7, 18) 0%, rgb(101, 28, 191) 100%); */
-    background-color: rgb(7, 7, 18);
+    background-color: rgb(13, 6, 34);
     color: whitesmoke;
     font-family: 'Play',
     Arial,
@@ -18,14 +18,14 @@ html, body {
 .topNav {
     display: flex;
     flex-direction: row;
-    background-color: #333;
+    background-color: rgb(35 28 60);
     align-items: center;
     justify-content: space-around;
 }
 .leftNav a {
     display: flex;
     align-items: flex-end;
-    color: #f2f2f2;
+    color: whitesmoke;
     font-size: 1em;
     text-decoration: none;
 }
@@ -40,14 +40,14 @@ html, body {
 .rightNav li > a {
     display: inline-block;
     /* list-style-type: none; */
-    color: #f2f2f2;
+    color: whitesmoke;
     font-size: 1em;
     text-decoration: none;
     padding: 1.25em 1em 1em 1em;
 }
 .rightNav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: whitesmoke;
+    color: rgb(13, 6, 34);
 }
 /* .topNav a.active {
     background-color: #ddd;

@@ -3,26 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.content img {
+    margin-bottom: 1em;
+}
 h2 {
     padding: 20px 0px 10px 0px;
 }
-.sort{
+.sort {
     text-align: right;
-    margin: 0px 150px 0px 150px;
+    margin: 0 25vw 0.5em 0;
 }
 .sortBy {
-    font-family: 'Play',
+    font-family: 'Lato',
         sans-serif;
     font-size: 1em;
-    padding: .5em;
-    margin: 1em .5em .5em .5em;
-    border-radius: 2em;
+    padding: .3em .5em;
+    margin: 0 0 .5em .5em;
+    border-radius: 7px;
     min-width: 50px;
     border: none;
+    background-color: rgb(74, 63, 114);
+    color: whitesmoke;
 }
 #abouttext {
-    padding: 10px 20% 10px 20%;
+    padding: 1em 30vw 1em 30vw;
+}
+button {
+    cursor: pointer;
 }
 button:active {
     transform: scale(0.98);
@@ -34,4 +41,119 @@ button:active {
     'wght' 400,
     'GRAD' 0,
     'opsz' 48
+}
+.tierFeed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lato',
+        sans-serif;
+}
+.tierPost {
+    display: flex;
+    padding: 0.5em 0 1em 0;
+    border-top: 1px solid rgb(35 28 60);
+    border-bottom: 1px solid rgb(35 28 60);
+    justify-content: center;
+    width: 56vw;
+}
+.tierContent {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    
+}
+.tier {
+    display: flex;
+    min-height: 3em;
+    align-items: center;
+    margin-top: 0.4em;
+    border-radius: 7px;
+    background-color: rgb(35 28 60);
+}
+.rank {
+    height: auto;
+    width: 3em;
+    height: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px 0 0 7px;
+    font-family: 'Play',
+    Arial,
+    sans-serif;
+}
+.profile {
+    font-size: 3.5em !important;;
+    margin-right: 0.2em;
+}
+.username {
+    font-weight: bold;
+    margin: .4em 0;
+}
+.title {
+    margin-bottom: .75em;
+}
+.item {
+    flex-grow: 1;
+    padding: 1em;
+}
+.voteBtn {
+    font-size: 2em !important;;
+    margin: 0 .2em;
+    background: none;
+    border: none;
+    color: whitesmoke;
+}
+.upVotes {
+    padding-left: 2em;
+}
+.downVotes {
+    padding-right: 1em;
+    width: 3em;
+}
+.likeBtn {
+    font-size: 2em !important;;
+    margin-left: 1em;
+    align-self: center;
+    background: none;
+    border: none;
+    color: whitesmoke;
+}
+.likes {
+    align-self: center;
+    padding-left: .5em;
+}
+
+
+
+
+.s {
+    background-color: rgb(255, 127, 127);
+    /* background-color: red; */
+}
+.a {
+    background-color: rgb(255, 191, 127);
+    /* background-color: orange; */
+}
+.b {
+    background-color: rgb(255, 223, 127);
+    /* background-color: yellow; */
+}
+.c {
+    background-color: rgb(255, 255, 127);
+    /* background-color: lightgreen; */
+}
+.d {
+    background-color: rgb(191, 255, 127);
+    /* background-color: cadetblue; */
+}
+.e {
+    background-color: rgb(127, 255, 127);
+    /* background-color: purple; */
+}
+.f {
+    background-color: rgb(127, 255, 255);
+    /* background-color: violet; */
 }

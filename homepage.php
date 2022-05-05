@@ -10,6 +10,7 @@
     <link rel="icon" href="images/logo.png">
     <script defer src="./scripts/homescripts.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8" />
@@ -45,108 +46,90 @@
     </div>
 
     <div class="content">
-        <h1>
-            <a href="./homepage.php"><img src="./images/logo.png" alt="Tier Bias Logo" width="50" height="50" /></a>
-            Tier Bias
-        </h1>
+        <a href="./homepage.php"><img src="./images/logo.png" alt="Tier Bias Logo" width="50" height="50" /></a>
+        <h1>Welcome</h1>
         <p id="abouttext">
-            Tier Bias is a list sharing site where users post ranked tier lists about any subject. Friends, family, or just random people online are able to agree or disagree with the original posters tier ranking by up-voting or down-voting on individual items of the lists themselves. The site works showcase the most controversial items on user’s lists by singling out the item in the main feed.
+            Tier Bias is a list sharing site where users post ranked tier lists about any subject. Friends, family, or just random people online are able to agree or disagree with the original posters tier ranking by up-voting or down-voting on individual items of the lists themselves. The site works to showcase the most controversial items on user’s lists by singling out the item in the main feed.
         </p>
     </div>
 
     <div class="sort">
         <p>
-            Sort by:
-            <button id="likeSort" class=sortBy onclick="likedSort()">Most Liked</button>
-            <button id="newSort" class=sortBy onclick="newestSort()">Newest</button>
+            Sort by
+            <button id="likeSort" class=sortBy>Most Liked</button>
+            <button id="newSort" class=sortBy>Newest</button>
         </p>
     </div>
 
     <!-- post-feed container do not remove -->
-    <div id="tierFeed">
+    <div class="tierFeed">
 
-        <!-- example post -->
-        <div class="tierPost">
+        <!-- example tier post -->
+        <!-- <div class="tierPost">
 
-            <!-- profile image holder (left column) -->
             <span class="material-symbols-outlined">account_circle</span>
 
-            <!-- main content (middle column) -->
             <div class="tierContent">
-
-                <p class="username"><!-- Username goes here --></p>
-
-                <p class="title"><!-- Title goes here --></p>
+                <p class="username"></p>
+                <p class="title"></p>
 
                 <div class="tier"><span>s</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>a</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>b</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>c</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>d</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>e</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
                 <div class="tier"><span>f</span>
-                    <p><!-- tier item goes here --></p>
-
-                    <p class="upVotes"><!-- upvote count here --></p>
+                    <p></p>
+                    <p class="upVotes"></p>
                     <span class="material-symbols-outlined">expand_less</span>
                     <span class="material-symbols-outlined">expand_more</span>
-                    <p class="downVotes"><!-- upvote count here --></p>
+                    <p class="downVotes"></p>
                 </div>
-
             </div>
-            
-            <!-- like button (right column) -->
+
             <span class="material-symbols-outlined">favorite</span>
-            <p class="likes"><!-- like count here --></p>
+            <p class="likes"></p>
 
-        </div>
-        <!-- end of example post -->
-
+        </div> -->
 
     </div>
-    <!-- end of feed container -->
 
     <div class="footer">
         <p>

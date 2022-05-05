@@ -35,8 +35,8 @@ if ($sort == 'likes') {
     
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
-    $tier .= "<div class='tierPost'>";
-    $tier .= "<span class='material'symbols-outlined'>account_circle</span>";
+    $tier = "<div class='tierPost'>";
+    $tier .= "<span class='profile material-symbols-outlined'>account_circle</span>";
 
     $tier .= "<div class='tierContent'>";
 
@@ -44,66 +44,71 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $tier .= "<p class='title'>$row[title]</p>";
 
-    $tier .= "<div class='tier'><span>s</span>";
-    $tier .= "<p>$row[s_tier]</p>";
-
+    $tier .= "<div class='tier'><span class='rank s'>S</span>";
+    $tier .= "<p class='item'>$row[s_tier]</p>";
     $tier .= "<p class='upVotes'>$row[s_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+    $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
     $tier .= "<p class='downVotes'>$row[s_down]</p>";
     $tier .= "</div>";
-    $tier .= "<div class='tier'><span>a</span>";
-    $tier .= "<p>$row[a_tier]</p>";
 
+    $tier .= "<div class='tier'><span class='rank a'>A</span>";
+    $tier .= "<p class='item'>$row[a_tier]</p>";
     $tier .= "<p class='upVotes'>$row[a_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
+    $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+    $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
     $tier .= "<p class='downVotes'>$row[a_down]</p>";
     $tier .= "</div>";
-    $tier .= "<div class='tier'><span>b</span>";
-    $tier .= "<p>$row[b_tier]</p>";
 
-    $tier .= "<p class='upVotes'>$row[b_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-    $tier .= "<p class='downVotes'>$row[b_down]</p>";
-    $tier .= "</div>";
-    $tier .= "<div class='tier'><span>c</span>";
-    $tier .= "<p>$row[c_tier]</p>";
-
-    $tier .= "<p class='upVotes'>$row[c_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-    $tier .= "<p class='downVotes'>$row[c_down]</p>";
-    $tier .= "</div>";
-    $tier .= "<div class='tier'><span>d</span>";
-    $tier .= "<p>$row[d_tier]</p>";
-
-    $tier .= "<p class='upVotes'>$row[d_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-    $tier .= "<p class='downVotes'>$row[d_down]</p>";
-    $tier .= "</div>";
-    $tier .= "<div class='tier'><span>e</span>";
-    $tier .= "<p>$row[e_tier]</p>";
-
-    $tier .= "<p class='upVotes'>$row[e_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-    $tier .= "<p class='downVotes'>$row[e_down]</p>";
-    $tier .= "</div>";
-    $tier .= "<div class='tier'><span>f</span>";
-    $tier .= "<p>$row[f_tier]</p>";
-
-    $tier .= "<p class='upVotes'>$row[f_up]</p>";
-    $tier .= "<span class='material-symbols-outlined'>expand_less</span>";
-    $tier .= "<span class='material-symbols-outlined'>expand_more</span>";
-    $tier .= "<p class='downVotes'>$row[f_down]</p>";
-    $tier .= "</div>";
+    if ($row['b_tier']) {
+        $tier .= "<div class='tier'><span class='rank b'>B</span>";
+        $tier .= "<p class='item'>$row[b_tier]</p>";
+        $tier .= "<p class='upVotes'>$row[b_up]</p>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
+        $tier .= "<p class='downVotes'>$row[b_down]</p>";
+        $tier .= "</div>";
+    }
+    if ($row['c_tier']) {
+        $tier .= "<div class='tier'><span class='rank c'>C</span>";
+        $tier .= "<p class='item'>$row[c_tier]</p>";
+        $tier .= "<p class='upVotes'>$row[c_up]</p>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
+        $tier .= "<p class='downVotes'>$row[c_down]</p>";
+        $tier .= "</div>";
+    }
+    if ($row['d_tier']) {
+        $tier .= "<div class='tier'><span class='rank d'>D</span>";
+        $tier .= "<p class='item'>$row[d_tier]</p>";
+        $tier .= "<p class='upVotes'>$row[d_up]</p>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
+        $tier .= "<p class='downVotes'>$row[d_down]</p>";
+        $tier .= "</div>";
+    }
+    if ($row['e_tier']) {
+        $tier .= "<div class='tier'><span class='rank e'>E</span>";
+        $tier .= "<p class='item'>$row[e_tier]</p>";
+        $tier .= "<p class='upVotes'>$row[e_up]</p>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
+        $tier .= "<p class='downVotes'>$row[e_down]</p>";
+        $tier .= "</div>";
+    }
+    if ($row['f_tier']) {
+        $tier .= "<div class='tier'><span class='rank f'>F</span>";
+        $tier .= "<p class='item'>$row[f_tier]</p>";
+        $tier .= "<p class='upVotes'>$row[f_up]</p>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_less</span></button>";
+        $tier .= "<button class='voteBtn'><span class='material-symbols-outlined'>expand_more</span></button>";
+        $tier .= "<p class='downVotes'>$row[f_down]</p>";
+        $tier .= "</div>";
+    }
 
     $tier .= "</div>";
         
-    $tier .= "<span class='material-symbols-outlined'>favorite</span>";
+    $tier .= "<button class='likeBtn'><span class='material-symbols-outlined'>favorite</span></button>";
     $tier .= "<p class='likes'>$row[tier_likes]</p>";
 
     $tier .= "</div>";
