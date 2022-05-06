@@ -1,3 +1,27 @@
+function likeTiersAjax(id) {
+    let ajaxRequest; // The variable that makes Ajax possible!
+    
+    ajaxRequest = new XMLHttpRequest();
+
+    ajaxRequest.onreadystatechange = function() {
+        if (ajaxRequest.readyState == 4) {
+            sort();
+        }
+    }
+
+    let queryString = "?id=" + id;
+    ajaxRequest.open("GET", "liketier.php" + queryString, true);
+    ajaxRequest.send(null);
+}
+
+
+function likeTier(id) {
+    console.log("like button with id was clicked", id);
+    let pid = id.split("-")[1];
+    likeTiersAjax(pid);
+}
+
+
 
 const likeSort = document.getElementById('likeSort');
 const newSort = document.getElementById('newSort');
@@ -77,3 +101,5 @@ function vote() {
     ajaxRequest.open("GET", "query.php" + queryString, true);
     ajaxRequest.send(null);
 }
+
+

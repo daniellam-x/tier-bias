@@ -111,7 +111,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $tier .= "</div>";
         
-    $tier .= "<button class='likeBtn'><span class='material-symbols-outlined'>favorite</span></button>";
+    $tier .= "<button id='like-$row[tier_id]' class='likeBtn' onclick='likeTier(this.id);'><span class='material-symbols-outlined'>favorite</span></button>";
     $tier .= "<p class='likes'>$row[tier_likes]</p>";
 
     $tier .= "</div>";
